@@ -1,0 +1,164 @@
+{% load static %}
+<html>
+    <head>
+        <title> MBTI별 분석결과 보기</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </head>
+    <body>
+        <ul class="nav justify-content-center">
+            <nav class="navbar navbar-dark bg-dark">
+                <!-- Navbar content -->
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white">분석배경</p></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/survey/survey_form/"><p class="text-white">설문참여하기</p></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/survey/mbti/"><p class="text-white">MBTI별</p></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/survey/major/"><p class="text-white">전공별</p></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/survey/study/"><p class="text-white">공부방법별</p></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/survey/pred_user/"><p class="text-white">성적예측</p></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+                </li>
+                <a class="nav-link active" aria-current="page" href="/survey/background/"><p class="text-white"></p></a>
+            </nav>
+            </ul>
+        <h1 align="center">
+            MBTI별 분석 결과
+        </h1>
+
+        <hr/>
+        <h3 align="center">
+            [MBTI별 선호도]
+        </h3>
+        <p align="center">{{gdf | safe}}
+        <hr/>
+
+        <h3 align="center">
+            [선호도 시각화]
+        </h3>
+        <p align="center">
+            <img src="{% static 'surveyapp/img/pref_mbti.png' %}" width="700" height="550">
+        </p>
+        <hr/>
+
+        <h3 align="center">
+            MBTI별 카이제곱검정
+        </h3>
+        <center>{{resultEI_ | safe}}
+        <br>
+        <br>
+        {{resultNS_ | safe}}
+        <br>
+        <br>
+        {{resultTF_ | safe}}
+        <br>
+        <br>
+        {{resultPJ_ | safe}}
+        </center>
+        <hr/>
+        <h3 align="center">
+            MBTI별 TOEIC 분석 결과
+        </h3>
+        <p align="center">{{ df_total_toeic | safe}}
+        <hr/>
+
+        <h3 align="center">
+            MBTI별 TEPS 분석 결과
+        </h3>
+        <p align="center">{{ df_total_teps | safe}}
+        <hr/>
+
+        <h3 align="center">
+            MBTI별 OPIc  분석 결과
+        </h3>
+        <p align="center">{{ df_total_opic | safe}}
+        <hr/>
+
+        <h3 align="center">
+            MBTI별 TOEIC SPEAKING 분석 결과
+        </h3>
+        <p align="center">{{ df_total_toeic_sp | safe}}
+        <hr/>
+
+        <h3 align="center">
+            MBTI별 분석 결론
+        </h3>
+        <br>
+        <br>
+        <h4 align="center">토익 시험의 평균 비교</h4>
+        <br>
+        {% for dt in mtoeic.score %}
+        <h5 align='center'>{{dt}}</h5>
+        {% endfor %}
+        <br>
+        <h4 align="center">텝스 시험의 평균 비교</h4>
+        <br>
+        {% for dt in mteps.score %}
+        <h5 align='center'>{{dt}}</h5>
+        {% endfor %}
+        <br>
+        <h4 align="center">오픽 시험의 평균 비교</h4>
+        <br>
+        {% for dt in mopic.score %}
+        <h5 align='center'>{{dt}}</h5>
+        {% endfor %}
+        <br>
+        <h4 align="center">토익 스피킹 시험의 평균 비교</h4>
+        <br>
+        {% for dt in mtoeic_sp.score %}
+        <h5 align='center'>{{dt}}</h5>
+        {% endfor %}
+        <br>
+    </body>
+</html>

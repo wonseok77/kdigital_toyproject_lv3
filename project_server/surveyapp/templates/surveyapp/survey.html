@@ -1,0 +1,247 @@
+<html>
+<head>
+    <title>
+        설문조사
+    </title>
+</head>
+<body>
+    <center><h2>* 어학시험에 대한 설문조사 *</h2></center>
+    <form action="/survey/insert/" method="post">
+        {% csrf_token %}
+    <table cellspacing="50">
+        <tr>
+            <td>당신의 MBTI는?</td>
+            <td>
+                <label for="E">E</label>
+                <input type="radio" id="E" name="E_I" value="E" checked="checked">
+                &nbsp
+                <label for="I">I</label>
+                <input type="radio" id="I" name="E_I" value="I">
+                <br>
+                <br>
+                <label for="S">S</label>
+                <input type="radio" id="S" name="S_N" value="S" checked="checked">
+                &nbsp
+                <label for="N">N</label>
+                <input type="radio" id="N" name="S_N" value="N">
+                <br>
+                <br>
+                <label for="T">T</label>
+                <input type="radio" id="T" name="T_F" value="T" checked="checked">
+                &nbsp
+                <label for="F">F</label>
+                <input type="radio" id="F" name="T_F" value="F">
+                <br>
+                <br>
+                <label for="J">J</label>
+                <input type="radio" id="J" name="J_P" value="J" checked="checked">
+                &nbsp
+                <label for="P">P</label>
+                <input type="radio" id="P" name="J_P" value="P">
+            </td>
+        </tr>
+        <tr>
+            <td>당신의 성별은?</td>
+            <td>
+                <label for="male">남</label>
+                <input type="radio" id="male" name="gender" value="남" checked="checked">
+                <label for="female">여</label>
+                <input type="radio" id="female" name="gender" value="여">
+            </td>
+        </tr>
+        <tr>
+            <td>어학시험 공부에 사용한 방법은?</td>
+            <td>
+                <label for="st_method">학원수강</label>
+                <input type="radio" id="hakwon" name="st_method" value="학원" checked="checked">
+                &nbsp
+                <label for="st_method">인터넷강의</label>
+                <input type="radio" id="ingang" name="st_method" value="인강">
+                &nbsp
+                <label for="st_method">스터디그룹</label>
+                <input type="radio" id="stugrp" name="st_method" value="스터디">
+                &nbsp
+                <label for="st_method">독학</label>
+                <input type="radio" id="solo" name="st_method" value="독학">
+                &nbsp
+                <label for="st_method">기타</label>
+                <input type="radio" id="etc" name="st_method" value="기타">
+            </td>
+        </tr>
+        <tr>
+            <td>당신의 전공학과는?</td>
+            <td>
+                <label for="eng">공과계열</label>
+                <input type="radio" id="eng" name="major" value="공과계열" checked="checked">
+                &nbsp
+                <label for="edu">교육계열</label>
+                <input type="radio" id="edu" name="major" value="교육계열">
+                &nbsp
+                <label for="socio">사회계열</label>
+                <input type="radio" id="socio" name="major" value="사회계열">
+                &nbsp
+                <label for="biz">상경계열</label>
+                <input type="radio" id="biz" name="major" value="상경계열">
+                &nbsp
+                <label for="art_sprt">예/체능계열</label>
+                <input type="radio" id="art_sprt" name="major" value="예/체능계열">
+                &nbsp
+                <label for="medicine">의약계열</label>
+                <input type="radio" id="medicine" name="major" value="의약계열">
+                &nbsp
+                <label for="humanities">인문계열</label>
+                <input type="radio" id="humanities" name="major" value="인문계열">
+                &nbsp
+                <label for="natural">자연계열</label>
+                <input type="radio" id="natural" name="major" value="자연계열">
+            </td>
+        </tr>
+        <tr>
+            <td>어학시험 응시할때 목표했던 점수는?</td>
+            <td>
+                <label for="160">320점 미만(NH)</label>
+                <input type="radio" id="160" name="sc_goal" value="160" checked="checked">
+                <br>
+                <br>
+                <label for="395">320점 이상 ~ 470점 미만(IL)</label>
+                <input type="radio" id="395" name="sc_goal" value="395">
+                <br>
+                <br>
+                <label for="595">470점 이상 ~ 720점 미만(IM1)</label>
+                <input type="radio" id="595" name="sc_goal" value="595">
+                <br>
+                <br>
+                <label for="767">720점 이상 ~ 815점 미만(IM2)</label>
+                <input type="radio" id="767" name="sc_goal" value="767">
+                <br>
+                <br>
+                <label for="865">815점 이상 ~ 915점 미만(IM3)</label>
+                <input type="radio" id="865" name="sc_goal" value="865">
+                <br>
+                <br>
+                <label for="935">915점 이상 ~ 955점 미만(IH)</label>
+                <input type="radio" id="935" name="sc_goal" value="935">
+                <br>
+                <br>
+                <label for="972">955점 이상(AL)</label>
+                <input type="radio" id="972" name="sc_goal" value="972">
+            </td>
+        </tr>
+        <tr>
+            <td>TOEIC에서 취득했던 점수는?</td>
+            <td>
+                <label for="toeic_sc">취득점수</label>
+                <input type="textbox" id="toeic_sc" name="toeic_sc" value="">
+            <div>
+                <input type="checkbox" id="toeic_sc" name="toeic_sc" value="">해당없음
+            </div>
+            <script>
+                $("input:checkbox[id='no']").prop("checked", true);
+                $("input:checkbox[id='no']").prop("checked", false);
+            </script>    
+            </td>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>TEPS에서 취득했던 점수는?</td>
+            <td>
+                <label for="teps_sc">취득점수</label>
+                <input type="textbox" id="teps_sc" name="teps_sc" value="">
+            <div>
+                <input type="checkbox" id="teps_sc" name="teps_sc" value="">해당없음
+            </div>
+            <script>
+                $("input:checkbox[id='no']").prop("checked", true);
+                $("input:checkbox[id='no']").prop("checked", false);
+            </script>    
+            </td>
+        </tr>
+        <tr>
+            <td>OPIC에서 취득했던 점수는?</td>
+            <td>
+                <label for="160">NH</label>
+                <input type="radio" id="160" name="opic_sc" value="160" checked="checked">
+                <br>
+                <br>
+                <label for="395">IL</label>
+                <input type="radio" id="395" name="opic_sc" value="395">
+                <br>
+                <br>
+                <label for="595">IM1</label>
+                <input type="radio" id="595" name="opic_sc" value="595">
+                <br>
+                <br>
+                <label for="767">IM2</label>
+                <input type="radio" id="767" name="opic_sc" value="767">
+                <br>
+                <br>
+                <label for="865">IM3</label>
+                <input type="radio" id="865" name="opic_sc" value="865">
+                <br>
+                <br>
+                <label for="935">IH</label>
+                <input type="radio" id="935" name="opic_sc" value="935">
+                <br>
+                <br>
+                <label for="972">AL</label>
+                <input type="radio" id="972" name="opic_sc" value="972">
+            <div>
+                <br>
+                <input type="checkbox" id="opic_sc" name="opic_sc" value="">해당없음
+            </div>
+            <script>
+                $("input:checkbox[id='no']").prop("checked", true);
+                $("input:checkbox[id='no']").prop("checked", false);
+            </script>
+            </td>
+        </tr>
+        <tr>
+            <td>TOEIC_SPEAKING에서 취득했던 점수는?</td>
+            <td>
+                <label for="160">NH</label>
+                <input type="radio" id="160" name="toeic_sp" value="160" checked="checked">
+                <br>
+                <br>
+                <label for="395">IL</label>
+                <input type="radio" id="395" name="toeic_sp" value="395">
+                <br>
+                <br>
+                <label for="595">IM1</label>
+                <input type="radio" id="595" name="toeic_sp" value="595">
+                <br>
+                <br>
+                <label for="767">IM2</label>
+                <input type="radio" id="767" name="toeic_sp" value="767">
+                <br>
+                <br>
+                <label for="865">IM3</label>
+                <input type="radio" id="865" name="toeic_sp" value="865">
+                <br>
+                <br>
+                <label for="935">IH</label>
+                <input type="radio" id="935" name="toeic_sp" value="935">
+                <br>
+                <br>
+                <label for="972">AL</label>
+                <input type="radio" id="972" name="toeic_sp" value="972">
+                <br>
+                <div>
+                <br>
+                <input type="checkbox" id="toeic_sp" name="toeic_sp" value="">해당없음
+            </div>
+            <script>
+                $("input:checkbox[id='no']").prop("checked", true);
+                $("input:checkbox[id='no']").prop("checked", false);
+            </script>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <br>
+            <input type="submit" value="설문완료">
+            <input type="reset" value="초기화">
+        </tr>
+    </table>
+    </form>
+</body>

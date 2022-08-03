@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <title> 어학시험 추천과 점수예측 결과 보기</title>
+    </head>
+        <body>
+            <h2 align="center">
+                * 최적 어학시험 결과 *
+            </h2>
+    
+            <hr/>
+            <h3 align="center">
+                당신에게 적절한 어학 시험은 {{test_pred}} 입니다
+                예상 점수는 {{sc_pred}} 입니다
+            </h3>
+            <hr/>
+            <p align="center"><img src="/static/surveyapp/img/img3.png" style="width: 30vw; min-width: 200px;">
+        </body>
+</html>
